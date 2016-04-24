@@ -27,7 +27,7 @@
                                             <td><b>{{ $book->title }}</b><hr>{{ $book->description }}</td>
                                             <td><b>{{ $book->author }}</b><hr>{{ $book->bio }}</td>
                                             <td><b>${{ $book->price }}</b></td>
-                                            <td width="70px"><b>{{ $book->rating }}</b> /5 <i class="glyphicon glyphicon-star-empty"></i></td>
+                                            <td width="80px"><b>{{ $book->rating }}</b> /5 <i class="glyphicon glyphicon-star-empty"></i></td>
                                         </tr>
                                     @endforeach
                                 </tbody>
