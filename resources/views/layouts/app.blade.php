@@ -55,6 +55,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/scrape') }}">Scrape</a></li>
                     <li><a href="{{ url('/book') }}">All books</a></li>
+                    <li><a href="https://github.com/kiangkuang/glints#api-endpoints">API</a></li>
                 </ul>
             </div>
         </div>
