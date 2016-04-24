@@ -100,7 +100,7 @@
                 </div>
             </div>
             <div class="panel panel-default">
-                <div class="panel-heading">Scrapped Skills</div>
+                <div class="panel-heading">Scraped Skills</div>
 
                 <div class="panel-body">
                     <ul>
