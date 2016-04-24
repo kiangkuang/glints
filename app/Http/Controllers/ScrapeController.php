@@ -39,7 +39,7 @@ class ScrapeController extends Controller
             if (trim(pq('#result_'.$i.' > div > div > div > div.a-fixed-left-grid-col.a-col-right > div.a-row.a-spacing-small > a > h2')->html())) {
                 $titles[] = trim(pq('#result_'.$i.' > div > div > div > div.a-fixed-left-grid-col.a-col-right > div.a-row.a-spacing-small > a > h2')->html());
                 $bookUrls[] = pq('#result_'.$i.' > div > div > div > div.a-fixed-left-grid-col.a-col-right > div.a-row.a-spacing-small > a')->attr('href');
-                $authors[] = trim(pq('#result_'.$i.' > div > div > div > div.a-fixed-left-grid-col.a-col-right > div.a-row.a-spacing-small > div > span:nth-child(2)')->text());
+                $authors[] = trim(substr(pq('#result_'.$i.' > div > div > div > div.a-fixed-left-grid-col.a-col-right > div.a-row.a-spacing-small > div')->text(), 3));
                 $authorUrls[] = pq('#result_'.$i.' > div > div > div > div.a-fixed-left-grid-col.a-col-right > div.a-row.a-spacing-small > div > span:nth-child(2) > a')->attr('href') ? 'http://www.amazon.com'.pq('#result_'.$i.' > div > div > div > div.a-fixed-left-grid-col.a-col-right > div.a-row.a-spacing-small > div > span:nth-child(2) > a')->attr('href') : '';
                 $prices[] = str_replace('$', '', pq('#result_'.$i.' > div > div > div > div.a-fixed-left-grid-col.a-col-right > div:nth-child(3) > div.a-column.a-span7 > div:nth-child(2) > a > span')->text());
                 $ratings[] = explode(' ', pq('#result_'.$i.' > div > div > div > div.a-fixed-left-grid-col.a-col-right > div:nth-child(3) > div.a-column.a-span5.a-span-last > div:nth-child(1) > span > span > a > i > span')->text())[0];
@@ -50,7 +50,7 @@ class ScrapeController extends Controller
         foreach ($bookUrls as $bookUrl) {
             if (strlen($bookUrl)) {
                 phpQuery::selectDocument(phpQuery::newDocumentFile($bookUrl));
-                $descriptions[] = trim(strip_tags(pq('head > meta[name=description]')->attr('content')));
+                $descriptions[] = trim(strip_tags(pq('#bookDescription_feature_div > noscript')->text()));
             } else {
                 $descriptions[] = '';
             }

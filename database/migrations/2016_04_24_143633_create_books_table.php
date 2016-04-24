@@ -16,9 +16,9 @@ class CreateBooksTable extends Migration
             $table->increments('id');
             $table->string('skill');
             $table->string('title');
-            $table->string('description', 1000);
+            $table->text('description');
             $table->string('author');
-            $table->string('bio', 1000);
+            $table->text('bio');
             $table->decimal('price', 6, 2);
             $table->decimal('rating', 2, 1);
             $table->string('image');
