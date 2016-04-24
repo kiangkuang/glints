@@ -99,6 +99,17 @@
                     </form>
                 </div>
             </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Scrapped Skills</div>
+
+                <div class="panel-body">
+                    <ul>
+                      @foreach ($skills as $skill)
+                        <li><a href="/book?skill={{ $skill->skill }}">{{ $skill->skill }}</a></li>
+                      @endforeach
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -14,7 +14,8 @@ class ScrapeController extends Controller
 {
     public function index()
     {
-        return view('scrape');
+        $data['skills'] = Book::groupBy('skill')->orderBy('skill', 'ASC')->get();
+        return view('scrape', $data);
     }
 
     public function process(Request $request)
