@@ -39,7 +39,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ secure_url('/') }}">
                     Show Me The Books
                 </a>
             </div>
@@ -53,8 +53,8 @@
 
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/scrape') }}">Scrape</a></li>
-                    <li><a href="{{ url('/book') }}">All books</a></li>
+                    <li><a href="{{ secure_url('/scrape') }}">Scrape</a></li>
+                    <li><a href="{{ secure_url('/book') }}">All books</a></li>
                     <li><a href="https://github.com/kiangkuang/glints#api-endpoints">API</a></li>
                 </ul>
             </div>
