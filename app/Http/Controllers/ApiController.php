@@ -105,4 +105,9 @@ class ApiController extends Controller
     {
         return response()->json(Book::where('id', $id)->delete());
     }
+
+    public function skill($skill)
+    {
+        return response()->json(Book::where('skill', $skill)->get());
+    }
 }

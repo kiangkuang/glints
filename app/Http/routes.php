@@ -18,5 +18,7 @@ Route::post('/scrape/process', 'ScrapeController@process');
 
 Route::get('/book', 'BookController@index');
 
+Route::get('api/skill/{skill}', 'ApiController@skill');
+
 Route::resource('api', 'ApiController',
                 ['except' => ['create', 'edit']]);
