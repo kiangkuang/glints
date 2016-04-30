@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-default">
-                <div class="panel-heading">{{ $skill }} books related to minimally 2 skills</div>
+                <div class="panel-heading">{{ $skill }} books</div>
 
                 <div class="panel-body">
                     @if (count($books) > 0)
