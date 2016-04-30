@@ -27,11 +27,12 @@ class BookController extends Controller
     		$books = Book::where('skill', $skill)->groupBy('title')->orderBy('title', 'ASC')->get();
     	}
 
-        foreach ($books as $i => $book) {
-            if (Book::where('title', $book->title)->count() < 2){
-                unset($books[$i]);
-            }
-        }
+        // only show books related to more than two skills
+        // foreach ($books as $i => $book) {
+        //     if (Book::where('title', $book->title)->count() < 2){
+        //         unset($books[$i]);
+        //     }
+        // }
 
     	$data['skill'] = $skill;
     	$data['books'] = $books;
